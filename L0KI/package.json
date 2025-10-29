@@ -1,6 +1,6 @@
 {
   "name": "loki-ai-chatbot",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "LOK|A| - Multi-Model AI Intelligence Platform with Claude, ChatGPT, and Gemini",
   "main": "AI.jsx",
   "scripts": {

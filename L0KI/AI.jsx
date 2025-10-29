@@ -28,12 +28,11 @@ const MultiAIChatbot = () => {
     // For security, use a backend proxy in production
     const models = {
         claude: {
-            name: 'Claude AI',
-            displayIcon: 'logo',
+            name: 'Claude AI ❋',
+            displayIcon: 'text',
             endpoint: 'https://api.anthropic.com/v1/messages',
             color: 'bg-amber-600',
             apiKey: process.env.REACT_APP_CLAUDE_API_KEY || 'your-claude-api-key-here',
-            logo: 'images/Claude_AI_Logo.png',
             modelVersion: 'claude-3-5-sonnet-20241022'
         },
         openai: {
@@ -254,29 +253,6 @@ const MultiAIChatbot = () => {
         }
     };
 
-    /**
-     * Renders model icon (logo or text)
-     */
-    const renderModelIcon = (modelKey, size = 'default') => {
-        const model = models[modelKey];
-        const sizeClasses = {
-            small: 'h-4',
-            default: 'h-5',
-            large: 'h-8'
-        };
-
-        if (model.displayIcon === 'logo' && model.logo) {
-            return (
-                <img
-                    src={model.logo}
-                    alt={model.name}
-                    className={sizeClasses[size]}
-                />
-            );
-        }
-        return <span className="font-semibold">{model.name}</span>;
-    };
-
     return (
         <div className="flex flex-col h-screen bg-black relative overflow-hidden">
             {/* Animated Background - Enhanced Grok-Style */}
@@ -304,19 +280,7 @@ const MultiAIChatbot = () => {
                     <div className="max-w-4xl mx-auto flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <div className="relative">
-                                {selectedModel === 'claude' && models.claude.logo ? (
-                                    <img
-                                        src={models.claude.logo}
-                                        alt="Claude AI"
-                                        className="h-10"
-                                        onError={(e) => {
-                                            e.target.style.display = 'none';
-                                            e.target.nextSibling.style.display = 'block';
-                                        }}
-                                    />
-                                ) : (
-                                    <Sparkles className="w-10 h-10 text-purple-400 animate-pulse" />
-                                )}
+                                <Sparkles className="w-10 h-10 text-purple-400 animate-pulse" />
                                 <div className="absolute inset-0 w-10 h-10 bg-purple-500 rounded-full filter blur-xl opacity-50"></div>
                             </div>
                             <div>
@@ -351,14 +315,6 @@ const MultiAIChatbot = () => {
                                             : 'bg-gray-900/50 text-gray-300 hover:bg-gray-800/70 border border-purple-500/20 hover:scale-102'
                                     } ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                                 >
-                                    {model.displayIcon === 'logo' && model.logo ? (
-                                        <img
-                                            src={model.logo}
-                                            alt={model.name}
-                                            className="h-5"
-                                            onError={(e) => e.target.style.display = 'none'}
-                                        />
-                                    ) : null}
                                     <span>{model.name}</span>
                                 </button>
                             ))}
@@ -417,17 +373,7 @@ const MultiAIChatbot = () => {
                                                         {msg.model}
                                                     </>
                                                 ) : (
-                                                    <>
-                                                        {msg.model.includes('Claude') && models.claude.logo && (
-                                                            <img
-                                                                src={models.claude.logo}
-                                                                alt="Claude AI"
-                                                                className="h-4"
-                                                                onError={(e) => e.target.style.display = 'none'}
-                                                            />
-                                                        )}
-                                                        <span>{msg.model}</span>
-                                                    </>
+                                                    <span>{msg.model}</span>
                                                 )}
                                             </div>
                                         )}

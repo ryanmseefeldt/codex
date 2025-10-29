@@ -5,7 +5,7 @@ A professional, enhanced AI chatbot interface that connects to multiple AI model
 ## Features
 
 ✨ **Multi-Model Support**
-- **Claude AI** - Anthropic's advanced AI assistant with image logo display
+- **Claude AI ❋** - Anthropic's advanced AI assistant
 - **ChatGPT ֎** - OpenAI's GPT-4 model
 - **Gemini ✦** - Google's Gemini Pro model
 
@@ -33,16 +33,7 @@ npm install react lucide-react
 yarn add react lucide-react
 ```
 
-### 2. Add Claude AI Logo
-
-Place the Claude AI logo image at:
-```
-L0KI/images/Claude_AI_Logo.png
-```
-
-> **Note**: The original Windows path `C:\Users\Owner\Downloads\Claude_AI_Logo.png` needs to be copied to the project's `L0KI/images/` directory for web accessibility.
-
-### 3. Configure API Keys
+### 2. Configure API Keys
 
 **IMPORTANT**: This component requires API keys for all three AI services.
 
@@ -72,7 +63,7 @@ The environment variables will be loaded when you start your React app.
 
 > ⚠️ **Security Warning**: The `.env` file is already in `.gitignore`. Never commit API keys to version control!
 
-### 4. Import and Use
+### 3. Import and Use
 
 ```javascript
 import MultiAIChatbot from './L0KI/AI';

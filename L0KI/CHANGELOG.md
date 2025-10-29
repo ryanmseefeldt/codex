@@ -2,18 +2,30 @@
 
 All notable changes to the LOK|A| Multi-Model AI Intelligence Platform.
 
+## [2.1.0] - 2025-10-29
+
+### 🎨 Branding Update
+
+- **Claude AI**: Updated from logo image to text "Claude AI ❋" with special character
+  - Simplified implementation without image dependencies
+  - Consistent text-based branding across all models
+  - Removed logo file requirements
+
+### 🧹 Code Cleanup
+
+- Removed unused `renderModelIcon` helper function
+- Simplified model selector and message header rendering
+- Cleaned up conditional logo checks throughout the component
+- Updated documentation to reflect text-only branding
+
 ## [2.0.0] - 2025-10-29
 
 ### 🎨 Enhanced Branding
 
-- **Claude AI**: Replaced text with professional logo image display
-  - Logo shown in header, model selector, and message headers
-  - Graceful fallback to Sparkles icon if logo fails to load
-
-- **ChatGPT**: Updated branding from "GPT-4 (OpenAI)" to "ChatGPT ֎"
+- **Claude AI ❋**: Anthropic's advanced AI assistant with special character branding
+- **ChatGPT ֎**: Updated branding from "GPT-4 (OpenAI)" to "ChatGPT ֎"
   - Added special character (֎) for visual distinction
-
-- **Gemini**: Updated branding from "Gemini (Google)" to "Gemini ✦"
+- **Gemini ✦**: Updated branding from "Gemini (Google)" to "Gemini ✦"
   - Added special character (✦) for visual distinction
 
 ### 🔧 API Improvements
